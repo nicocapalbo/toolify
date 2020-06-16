@@ -19,3 +19,4 @@ puts "2. Creating tools..."
 20.times { Tool.create( name: Faker::Construction.heavy_equipment, description: "Some details", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))}
 
 puts "3. Process completed"
+
