@@ -1,0 +1,9 @@
+<h1>Tools</h1>
+
+<% @tools.each do |tool|%>
+  <p><%= tool.name %></p>
+  <p><%= tool.location %></p>
+  <%= link_to 'Show', tool_path(tool) %>
+  <%= link_to 'Edit', edit_tool_path(tool) %>
+  <%= link_to 'Delete', tool_path(tool), method: :delete, data: { confirm: 'are you sure ?' }  %>
+<% end %>
