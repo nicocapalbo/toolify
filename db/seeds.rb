@@ -5,18 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
+puts "1. Creating users..."
 
-puts "1.Cleaning database..."
-Tool.destroy_all
+User.create(first_name: "Alejandro", last_name: "Bringas", email: "alejandro@mail.com", password: "123456")
+User.create(first_name: "Nicolas", last_name: "Capalbo", email: "nicolas@mail.com", password: "123456")
+User.create(first_name: "David", last_name: "Ibañez", email: "david@mail.com", password: "123456")
+User.create(first_name: "Francesco", last_name: "Biedermann", email: "francesco@mail.com", password: "123456")
 
-puts "2.Creating tools..."
-screwdriver = { name: "Screwdriver", description: "best screwdriver in the world", price: "5" }
-hammer = { name: "Hammer", description: "best hammer in the world", price: "3" }
+puts "2. Creating tools..."
 
-counter = 3
-[ screwdriver, hammer].each do |attributes|
-  tool = Tool.create!(attributes)
-  puts "#{counter += 1} - Created #{tool.name}"
-end
-puts "#{counter + 1}- Finished!"
+20.times { Tool.create( name: Faker::Construction.heavy_equipment, description: "Some details", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))}
+
+puts "3. Process completed"
+
