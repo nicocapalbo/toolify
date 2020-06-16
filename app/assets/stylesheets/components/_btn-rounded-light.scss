@@ -1,0 +1,16 @@
+.btn-rounded-light {
+  color: #53bbc3;
+  border: 1px solid #53bbc3;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 1px 1px 2px #eceaed;
+}
+
+.btn-rounded-light:hover {
+  color: #36949c;
+  border: 1px solid #36949c;
+  text-decoration: none;
+}
