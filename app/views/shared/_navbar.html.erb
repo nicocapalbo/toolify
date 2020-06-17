@@ -14,7 +14,7 @@
         <% if user_signed_in? %>
         <div class="menu-btn">
           <li class="nav-item">
-            <%= link_to "Upload a tool", "#", class: "btn-flat" %>
+            <%= link_to "Upload a tool", new_tool_path, class: "btn-flat" %>
           </li>
           <li class="nav-item active">
             <%= link_to "Home", "/", class: "btn-transparent" %>
