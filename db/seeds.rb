@@ -10,9 +10,9 @@ require "open-uri"
 
 puts "1. Cleaning db.."
 
-User.destroy_all
-Tool.destroy_all
 Booking.destroy_all
+Tool.destroy_all
+User.destroy_all
 
 puts "2. Creating users..."
 
