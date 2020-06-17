@@ -11,7 +11,7 @@
         <div class="input-group mb-3">
           <input type="text" class="form-control input-height" placeholder="Where do you want your tool?">
           <div class="input-group-append">
-            <button class="btn btn-flat" type="button">Search</button>
+            <%= link_to "Search", tools_path, class: "btn-flat btn-upload" %>
           </div>
         </div>
       </form>
@@ -28,8 +28,12 @@
       <div class="cards">
       <% @tools.take(4).each do |tool|  %>
       <div class="home-cards">
-        <%#= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
-        <img src="https://cdn.pixabay.com/photo/2020/05/26/07/03/screwdriver-5221738__340.jpg" />
+      <% if tool.photo.attached? %>
+        <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+      <% end %>
+  <!--       <img src="https://cdn.pixabay.com/photo/2020/05/26/07/03/screwdriver-5221738__340.jpg" /> -->
         <div class="home-cards-infos">
           <div>
             <h2><%= tool.name%></h2>
