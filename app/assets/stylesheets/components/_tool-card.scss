@@ -1,0 +1,67 @@
+
+.tool-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  }
+
+  img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  }
+
+  h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #2f4d6b;
+  }
+
+  p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  }
+}
+
+
+.tool-card .tool-card-infos {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tool-card-links {
+  text-align: right;
+  padding: 0 10px 10px 0;
+}
+
+.tool-icon {
+  color: #CECECE;
+
+  &:hover {
+  color: #666;
+  }
+}
+
+.fa-star {
+  color: $toolify-light;
+  opacity: 0.5;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+
+  &:hover {
+  color: $toolify-dark;
+  opacity: 1;
+  }
+}
+

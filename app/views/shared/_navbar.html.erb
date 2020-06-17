@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light toolify-navbar">
   <div class="container">
     <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "toolify.png" %>
+    <%= image_tag "logo-trans.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
         <% if user_signed_in? %>
         <div class="menu-btn">
           <li class="nav-item">
-            <%= link_to "Upload a tool", new_tool_path, class: "btn-flat" %>
+            <%= link_to "Upload a tool", new_tool_path, class: "btn-flat btn-upload" %>
           </li>
           <li class="nav-item dropdown avatar-pos">
             <%= image_tag "https://media-exp1.licdn.com/dms/image/C4E03AQG8tbrlR2K73g/profile-displayphoto-shrink_800_800/0?e=1597881600&v=beta&t=y5aZ7Cr8bA6XRA8LHZa_NRituwC4ZVud_alXGOv1QDA", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
