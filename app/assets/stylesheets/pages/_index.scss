@@ -2,6 +2,11 @@
 @import "home";
 @import "../components/footer";
 
+h1 {
+  color: $toolify-dark;
+  font-weight: 900;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container py-5">
   <h1>Tools</h1>
   <div class="cards">
     <% @tools.each do |tool|%>
     <div class="tool-card">
-      <%#= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+      <%#= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
       <img src="https://cdn.pixabay.com/photo/2020/05/26/07/03/screwdriver-5221738__340.jpg" alt="">
       <div class="tool-card-infos">
       <h3><i class="fas fa-star"></i><%= tool.name %></h3>
@@ -11,7 +11,7 @@
       </div>
       <div class="tool-card-links">
       <%= link_to tool_path(tool) do %>
-        <i class="far fa-eye"></i>
+        <i class="far fa-eye tool-icon"></i>
         <% end %>
       <%#= link_to 'Edit', edit_tool_path(tool) %>
       <%#= link_to 'Delete', tool_path(tool), method: :delete, data: { confirm: 'are you sure ?' }  %>
