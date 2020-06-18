@@ -24,7 +24,7 @@ User.create(first_name: "Francesco", last_name: "Biedermann", email: "francesco@
 puts "3. Creating tools..."
 
 puts "1"
-file = URI.open('https://imgaz1.staticbg.com/thumb/large/oaupload/banggood/images/B9/D0/2605c729-ebc9-475e-ac91-02a26fff3520.jpg')
+file = URI.open('https://espacio-industria.com/pub/media/catalog/product/cache/image/700x560/e9c3970ab036de70892d86c6d221abfe/d/r/dremel-4000-36-dremel-4000-36-media_gallery_gallery_0-es_ar-ecommerce-multiherramienta_dremel_4000_36_accesorios_b.jpg')
 tool = Tool.create!(name: "Cordless Drill", description: "A cordless drill (or power drill) is an electric drill with rechargeable batteries and it is the most common item in any garage, construction site, or workshop.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
 tool.photo.attach(io: file, filename: 'cordless_drill.jpg', content_type: 'image/jpg')
 puts "2"
