@@ -1,6 +1,10 @@
 class ToolsController < ApplicationController
   def index
-    @tools = Tool.all
+    if params[:query].present?
+      @tools = Tool.search_by_name_and_location(params[:query])
+    else
+      @tools = Tool.all
+    end
   end
 
   def show
