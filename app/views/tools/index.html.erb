@@ -8,9 +8,10 @@
       <% else %>
         <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
       <% end %>
+      <i class="fas fa-star position-star"></i>
       <div class="tool-card-infos">
-      <h3><i class="fas fa-star"></i><%= tool.name %></h3>
-      <p><%= tool.location %></p>
+        <h3><%= tool.name %></h3>
+        <p><%= tool.location %></p>
       </div>
       <div class="tool-card-links">
       <%= link_to tool_path(tool) do %>

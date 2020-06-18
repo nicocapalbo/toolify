@@ -2,8 +2,10 @@
 .tool-card {
   overflow: hidden;
   background: white;
+  height: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  cursor: pointer;
   border-radius: 5px;
   &:hover {
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
@@ -11,10 +13,9 @@
 
   img {
   height: 200px;
-  // width: 100%;
-  // object-fit: cover;
-  text-align: center;
-  padding-left: 20px;
+  width: 100%;
+  object-fit: contain;
+  padding: 15px;
   }
 
   h3 {
@@ -25,7 +26,7 @@
   }
 
   p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   margin: 0;
   }
@@ -37,6 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
 }
 
 .tool-card-links {
@@ -52,13 +54,14 @@
   }
 }
 
-.fa-star {
+.position-star {
   color: $toolify-light;
   opacity: 0.5;
   font-size: 20px;
+  text-align: right;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   cursor: pointer;
 
   &:hover {
