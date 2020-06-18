@@ -1,0 +1,33 @@
+
+<p>Current User: <%= current_user.first_name%> <%= current_user.last_name%></p>
+
+<p>Bookings</p>
+
+<!-- Shows the current pending approval/rejecting rent's -->
+<!-- If the rental is == "pending", the card gets showned. -->
+<% current_user.tools.each do |b| %>
+  <% b.bookings.each do |booking| %>
+    <% if booking.status != "pending" %>
+      <!-- displays BOOKERS NAME -->
+      <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p><%  %></p>
+      <!-- ACCEPT BUTTON -->
+      <%= simple_form_for(booking) do |f| %>
+        <%= f.input :status, as: :hidden, input_html: {value: 'accepted'} %>
+        <%= f.submit "Accept" %>
+      <% end %>
+      <!-- REJECT BUTTON -->
+      <%= simple_form_for(booking) do |f| %>
+        <%= f.input :status, as: :hidden, input_html: {value: 'rejected'} %>
+        <%= f.submit "Reject" %>
+     <% end %>
+
+   <% end %>
+  <%end%>
+<%end%>
+
+
+
+
+
+
