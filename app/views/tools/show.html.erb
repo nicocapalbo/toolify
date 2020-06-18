@@ -1,4 +1,4 @@
-<div class="container container-show">
+<div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8">
       <div class="card-tool-show">
@@ -9,7 +9,7 @@
         <% end %>
         <div class="card-tool-infos">
           <h2><%= @tool.name %></h2>
-          <h3 class="p-show"><%= @tool.description %></h3>
+          <h3 class="p-show"><%= @tool.description.truncate(90) %></h3>
 
           <div class="tool-details">
             <p><i class="fas fa-map-marker-alt"> </i><strong> Location: </strong><%= @tool.location %></p>
@@ -21,35 +21,29 @@
       </div>
       <%= link_to 'Back', tools_path, :class => "btn-transparent" %>
     </div>
-  </div>
 
-  <div class="other-tools"><h4>Other items of <%= @tool.user.first_name%>:</h4>
-
-    <div class="card-owner-tools">
-      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
-      <div class="owner-tools-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+    <div class="col-sm-12 col-md-4">
+        <div class="other-tools"><h4>Other items of <%= @tool.user.first_name%>:</h4>
+          <% @user_tools.each do |user_tool| %>
+          <div class="card-owner-tools">
+             <%= cl_image_tag user_tool.photo.key %>
+            <div class="owner-tools-infos">
+              <h2><%=user_tool.name %></h2>
+              <p><%=user_tool.description %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-
-    <div class="card-owner-tools">
-      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
-      <div class="owner-tools-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-    <div class="card-owner-tools">
-      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
-      <div class="owner-tools-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
   </div>
 </div>
-<div class="container map">
-  <img src="https://staticmapmaker.com/img/google@2x.png">
-</div>
+
+<div class="container">
+    <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+   </div>
+ </div>
+
+
