@@ -96,31 +96,6 @@ file = URI.open('https://images-na.ssl-images-amazon.com/images/I/81GDJbhEemL._A
 tool = Tool.create!(name: "Bench Grinder", description: "A bench grinder is a form of grinding machine that uses abrasive wheels.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
 tool.photo.attach(io: file, filename: 'bench_grinder.jpg', content_type: 'image/jpg')
 
-puts "18"
-file = URI.open('https://cdn.rona.ca/images/05915148_L.jpg')
-tool = Tool.create!(name: "Shop Vac", description: "A special kind of vacuum which is most often used in woodworking and construction is known as the shop vac.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
-tool.photo.attach(io: file, filename: 'vac.jpg', content_type: 'image/jpg')
-
-puts "19"
-file = URI.open('https://shop.harborfreight.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/6/1/61728_W3.jpg')
-tool = Tool.create!(name: "Belt Sander", description: "A belt sander or strip sander is used to finish woodworking projects and other projects. The belt sander has an electric motor that turns a pair of drums where a loop of sandpaper is mounted.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
-tool.photo.attach(io: file, filename: 'belt_sander.jpg', content_type: 'image/jpg')
-
-puts "20"
-file = URI.open('https://sydneytools.com.au/assets/images/products/1/1/5/4/11549/ED506F647E34557CE74B61A474D2A3394BCF1A8BF19C0F284327D32CF14ED64F.jpeg')
-tool = Tool.create!(name: "Random Orbital Sander", description: "A power tool used for sanding is the random orbital sander and is a hand-held tool where the sanding blade delivers a random-orbit action.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
-tool.photo.attach(io: file, filename: 'orbital_sander.jpg', content_type: 'image/jpg')
-
-puts "21"
-file = URI.open('https://images.machineryhouse.com.au/products_originals/L1335/700/Main.jpg')
-tool = Tool.create!(name: "Disc Sander", description: "A powerful tool used to smoothen surfaces with sandpaper is the disc sander.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
-tool.photo.attach(io: file, filename: 'disc_sander.jpg', content_type: 'image/jpg')
-
-puts "22"
-file = URI.open('https://www.rockler.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/2/8/28636-01-1000.jpg')
-tool = Tool.create!(name: "Wood Router", description: "A wood router is part of the power tool family and allows you to hollow out an area in relatively hard materials such as plastic or wood.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))
-tool.photo.attach(io: file, filename: 'wood_router.jpg', content_type: 'image/jpg')
-
 puts "23"
 file = URI.open('https://eastern.rooftraining.co.uk/wp-content/uploads/Paslode-800x800.jpg')
 tool = Tool.create!(name: "Nail Gun", description: "A nail gun is a tool that is used to drive a nail into wood or other materials. It is also called a nail finisher, framing nailer or nailer.", location: "Barcelona", price: rand(1..20), user_id: rand(1..4))

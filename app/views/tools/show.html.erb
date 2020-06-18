@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8">
+    <div class="col-sm-12 col-md-8 col-lg-8">
       <div class="card-tool-show">
         <% if @tool.photo.attached? %>
           <%= cl_image_tag @tool.photo.key, class: "img-show" %>
@@ -22,14 +22,14 @@
       <%= link_to 'Back', tools_path, :class => "btn-transparent" %>
     </div>
 
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-4 col-lg-4">
         <div class="other-tools"><h4>Other items of <%= @tool.user.first_name%>:</h4>
           <% @user_tools.each do |user_tool| %>
           <div class="card-owner-tools">
              <%= cl_image_tag user_tool.photo.key %>
             <div class="owner-tools-infos">
               <h2><%=user_tool.name %></h2>
-              <p><%=user_tool.description %></p>
+              <p><%=user_tool.description.truncate(30) %></p>
             </div>
           </div>
           <% end %>
