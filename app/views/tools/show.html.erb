@@ -1,19 +1,55 @@
-<div class="container show-page">
+<div class="container container-show">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <h1 class="header-show"><%= @tool.name %></h1>
-      <p class="p-show"><%= @tool.description %></p>
-      <% if @tool.photo.attached? %>
-        <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
-      <% end %>
-      <hr>
-      <p class="p-show p-show-details"><strong>Location: </strong><%= @tool.location %></p>
-      <p class="p-show p-show-details"><strong>Price: </strong><%= @tool.price %>€/day</p>
-      <p class="p-show p-show-details"><strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
-      <br>
-      <%= link_to 'Back', tools_path, :class => "btn-flat" %>
+    <div class="col-sm-12 col-md-8">
+      <div class="card-tool-show">
+        <% if @tool.photo.attached? %>
+          <%= cl_image_tag @tool.photo.key, class: "img-show" %>
+        <% else %>
+          <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+        <% end %>
+        <div class="card-tool-infos">
+          <h2><%= @tool.name %></h2>
+          <h3 class="p-show"><%= @tool.description %></h3>
+
+          <div class="tool-details">
+            <p><i class="fas fa-map-marker-alt"> </i><strong> Location: </strong><%= @tool.location %></p>
+            <p><i class="fas fa-tag"></i> <strong>Price: </strong><%= @tool.price %>€/day</p>
+            <p><i class="fas fa-user-circle"></i> <strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+          </div>
+          <div class="book-now"><%= link_to 'Book Now', tools_path, :class => "btn-flat btn-book-now" %></div>
+        </div>
+      </div>
+      <%= link_to 'Back', tools_path, :class => "btn-transparent" %>
     </div>
   </div>
+
+  <div class="other-tools"><h4>Other items of <%= @tool.user.first_name%>:</h4>
+
+    <div class="card-owner-tools">
+      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
+      <div class="owner-tools-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+    <div class="card-owner-tools">
+      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
+      <div class="owner-tools-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+    <div class="card-owner-tools">
+      <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg" />
+      <div class="owner-tools-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container map">
+  <img src="https://staticmapmaker.com/img/google@2x.png">
 </div>

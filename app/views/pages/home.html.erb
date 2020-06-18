@@ -16,7 +16,7 @@
         </div>
       </form>
     </div>
-    <div class="home-banner w-100 p-5 mt-5 mb-5">
+    <div class="home-banner w-100 p-5 mt-5 mb-5" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
       <h1>Find the tool you miss</h1>
       <h3>Choose your location and the tool you need</h3>
       <!-- <button class="btn btn-flat">Get a tool</button> -->
@@ -24,15 +24,14 @@
 
         <!-- CHANGE THE SRC OF THE IMG -->
 
-
       <div class="cards">
-      <% @tools.take(4).each do |tool|  %>
-      <div class="home-cards">
-      <% if tool.photo.attached? %>
-        <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
-      <% end %>
+        <% @tools.take(4).each do |tool|  %>
+        <div class="home-cards">
+          <% if tool.photo.attached? %>
+            <%= cl_image_tag tool.photo.key  %>
+          <% else %>
+            <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+          <% end %>
   <!--       <img src="https://cdn.pixabay.com/photo/2020/05/26/07/03/screwdriver-5221738__340.jpg" /> -->
         <div class="home-cards-infos">
           <div>
