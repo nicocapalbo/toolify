@@ -2,25 +2,29 @@
   <h1>Tools</h1>
   <div class="cards">
     <% @tools.each do |tool|%>
+    <%= link_to tool_path(tool) do %>
     <div class="tool-card">
       <% if tool.photo.attached? %>
       <%= cl_image_tag tool.photo.key, crop: :mfit %>
       <% else %>
-        <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+      <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
       <% end %>
       <i class="fas fa-star position-star"></i>
       <div class="tool-card-infos">
         <h3><%= tool.name %></h3>
-        <p><%= tool.location %></p>
+        <p><%= tool.description.truncate(20) %></p>
+        <div>
+          <p><%= tool.location %></p>
+          <p><%= tool.price %>€/day</p>
+        </div>
       </div>
       <div class="tool-card-links">
-      <%= link_to tool_path(tool) do %>
-        <i class="far fa-eye tool-icon"></i>
-        <% end %>
-      <%#= link_to 'Edit', edit_tool_path(tool) %>
-      <%#= link_to 'Delete', tool_path(tool), method: :delete, data: { confirm: 'are you sure ?' }  %>
+        <!-- <i class="far fa-eye tool-icon"></i> -->
+        <%#= link_to 'Edit', edit_tool_path(tool) %>
+        <%#= link_to 'Delete', tool_path(tool), method: :delete, data: { confirm: 'are you sure ?' }  %>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
