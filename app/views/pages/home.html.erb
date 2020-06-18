@@ -1,45 +1,58 @@
-<div class="header">
-  <div class="container">
-    <div class="toolify-navbar">
-    </div>
-  </div>
-</div>
+
+<div class="main-margin-top">
 <div class="section">
+
+    <div class="home-banner d-flex align-items-center w-100 p-5 mt-5 mb-5" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
   <div class="container">
-        <div class="input-group mt-3">
+      <h1>Find the tool you miss</h1>
+      <h3>Choose your location and the tool you need</h3>
           <%= form_with url: tools_path, method: :get, local: true do %>
             <%= text_field_tag :query, "", class: "form-control", placeholder: "Search for a Tool!" %>
             <%= submit_tag "", class: "d-none" %>
           <% end %>
-        </div>
-    <div class="home-banner w-100 p-5 mt-5 mb-5" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
-      <h1>Find the tool you miss</h1>
-      <h3>Choose your location and the tool you need</h3>
-      <!-- <button class="btn btn-flat">Get a tool</button> -->
-    </div>
+      <%#= simple_form_for :query, url: tools_path, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
+      <%#= f.input :name, label: false, placeholder: "Name", class: "form-group mb-2" %>
+      <%#= f.input :location, label: false, placeholder: "Location", class: "form-group mb-2" %>
+      <%#= f.submit "Search", class: "btn-flat" %>
+      <%# end %>
+      </div>
 
-        <!-- CHANGE THE SRC OF THE IMG -->
-
-      <div class="cards">
-        <% @tools.take(4).each do |tool|  %>
-        <div class="home-cards">
-          <% if tool.photo.attached? %>
-            <%= cl_image_tag tool.photo.key  %>
-          <% else %>
-            <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
-          <% end %>
-  <!--       <img src="https://cdn.pixabay.com/photo/2020/05/26/07/03/screwdriver-5221738__340.jpg" /> -->
-        <div class="home-cards-infos">
-          <div>
-            <h2><%= tool.name%></h2>
-            <p><%= tool.description %></p>
+      <!-- <div class="search-form mt-5">
+        <form action="">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control input-height" placeholder="Where do you want your tool?">
+            <div class="input-group-append">
+              <%#= link_to "Search", tools_path, class: "btn-flat btn-upload" %>
+            </div>
           </div>
-         <%= link_to tool_path(tool) do %>
-        <i class="far fa-eye tool-icon"></i>
-        <% end %>
-        </div>
+        </form>
+      </div> -->
+
+    <!-- <button class="btn btn-flat">Get a tool</button> -->
+  </div>
+</div>
+
+<!-- CHANGE THE SRC OF THE IMG -->
+<div class="container">
+  <div class="cards">
+    <% @tools.take(4).each do |tool|  %>
+    <%= link_to tool_path(tool) do %>
+    <div class="home-cards">
+     <% if tool.photo.attached? %>
+     <%= cl_image_tag tool.photo.key  %>
+     <% else %>
+     <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+     <% end %>
+     <div class="home-cards-infos">
+      <div>
+        <h2><%= tool.name%></h2>
+        <p><%= tool.description.truncate(130) %></p>
       </div>
-      <% end %>
-      </div>
+      <!-- <i class="far fa-eye tool-icon"></i> -->
     </div>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+</div>
 </div>

@@ -9,3 +9,23 @@
 @import "btn-transparent";
 @import "tool-form";
 @import "show";
+
+
+h1, h2, h3 {
+  color: $toolify-dark;
+}
+
+p {
+  color: $toolify-dark;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 20px !important;
+  color: $toolify-dark;
+  opacity: 1 !important;
+}

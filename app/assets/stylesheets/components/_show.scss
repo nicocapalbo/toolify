@@ -114,11 +114,10 @@
   width: 100%;
 }
 
-
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
   .container {
-    width: 700px;
+    /* width: 700px;*/
   }
 }
 @media (max-width: 720px) {

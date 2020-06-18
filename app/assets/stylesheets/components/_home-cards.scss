@@ -4,9 +4,10 @@
   height: 360px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  cursor: pointer;
+  transition: 0.5s all cubic-bezier(0.21, 1, 0.24, 1.41);
   &:hover {
     box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    text-decoration: none;
   }
 
   img {
@@ -15,18 +16,20 @@
   object-fit: contain;
   padding: 15px;
   }
-}
 
-.home-cards h2 {
+  h2 {
   font-size: 19px;
   font-weight: bold;
   margin: 0;
-}
+  }
 
-.home-cards p {
-  font-size: 16px;
-  opacity: .7;
-  margin: 0;
+  p {
+    font-size: 16px;
+    opacity: .7;
+    margin: 0;
+    text-decoration: none;
+  }
+
 }
 
 
@@ -47,4 +50,6 @@
   text-align: right;
   padding: 0 10px 10px 0;
 }
+
+
 
