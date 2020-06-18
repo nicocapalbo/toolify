@@ -1,10 +1,26 @@
 class ToolsController < ApplicationController
   def index
     @tools = Tool.all
+    @tools = Tool.geocoded
+    @markers = @tools.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude,
+        image_url: helpers.asset_url('toolify-marker.png')
+      }
+    end
   end
 
   def show
     @tool = Tool.find(params[:id])
+    @user_tools = @tool.user.tools.first(3)
+    @markers = [
+      {
+        lat: @tool.latitude,
+        lng: @tool.longitude,
+        image_url: helpers.asset_url('toolify-marker.png')
+      }
+    ]
   end
 
   def new
