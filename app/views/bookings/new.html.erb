@@ -1,1 +1,10 @@
-new.html.erb
+<div class="container tool-form">
+  <h1>Booking:</h1>
+    <p><%= @tool.name %> from: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+    <%= simple_form_for [@tool, @booking] do |f| %>
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :finish_date, as: :date %>
+      <%= f.button :submit, class: "btn-flat"%>
+    <% end %>
+</div>
+
