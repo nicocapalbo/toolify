@@ -16,7 +16,7 @@
             <p><i class="fas fa-tag"></i> <strong>Price: </strong><%= @tool.price %>€/day</p>
             <p><i class="fas fa-user-circle"></i> <strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
           </div>
-          <div class="book-now"><%= link_to 'Book Now', tools_path, :class => "btn-flat btn-book-now" %></div>
+          <div class="book-now"><%= link_to 'Book Now', new_tool_booking_path(@tool), :class => "btn-flat btn-book-now" %></div>
         </div>
       </div>
       <%= link_to 'Back', tools_path, :class => "btn-transparent" %>
