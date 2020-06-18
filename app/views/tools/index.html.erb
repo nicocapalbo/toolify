@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container main-margin-top py-5">
   <h1>Tools</h1>
   <div class="cards">
     <% @tools.each do |tool|%>
@@ -10,8 +10,8 @@
       <img class="img-show" src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
       <% end %>
       <i class="fas fa-star position-star"></i>
-      <div class="tool-card-infos">
         <h3><%= tool.name %></h3>
+      <div class="tool-card-infos">
         <p><%= tool.description.truncate(20) %></p>
         <div>
           <p><%= tool.location %></p>
