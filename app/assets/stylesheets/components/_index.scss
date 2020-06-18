@@ -15,15 +15,17 @@ h1, h2, h3 {
   color: $toolify-dark;
 }
 
-.main-margin-top {
-  margin-top: 65px;
+p {
+  color: $toolify-dark;
 }
-
-.main-padding-top {
-
-}
-
 
 a:hover {
   text-decoration: none;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 20px !important;
+  color: $toolify-dark;
+  opacity: 1 !important;
 }

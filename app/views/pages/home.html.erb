@@ -1,27 +1,28 @@
 <div class="main-margin-top">
 
 
-  <div class="home-banner w-100 mt-5 mb-5" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
-    <div class="container">
+  <div class="home-banner w-100 mt-5 mb-5 d-flex align-items-center" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
+    <div class="container ">
       <h1>Find the tool you miss</h1>
       <h3>Choose your location and the tool you need</h3>
-      <div class="search-form mt-5">
+
+      <%= simple_form_for :query, url: tools_path, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
+      <%= f.input :name, label: false, placeholder: "Name", class: "form-group mb-2" %>
+      <%= f.input :location, label: false, placeholder: "Location", class: "form-group mb-2" %>
+      <%= f.submit "Search", class: "btn-flat" %>
+      <% end %>
+      </div>
+
+      <!-- <div class="search-form mt-5">
         <form action="">
           <div class="input-group mb-3">
             <input type="text" class="form-control input-height" placeholder="Where do you want your tool?">
             <div class="input-group-append">
-              <%= link_to "Search", tools_path, class: "btn-flat btn-upload" %>
+              <%#= link_to "Search", tools_path, class: "btn-flat btn-upload" %>
             </div>
           </div>
         </form>
-      </div>
-    </div>
-
-    <%#= simple_form_for [ @tool ] do |f| %>
-    <%#= f.input :name %>
-    <%#= f.input :location %>
-    <%#= f.submit "Search", class: "btn-flat btn-upload" %>
-    <%# end %>
+      </div> -->
 
     <!-- <button class="btn btn-flat">Get a tool</button> -->
   </div>

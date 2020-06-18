@@ -4,13 +4,12 @@
   border-radius: 4px;
   background: #53BBC3;
   transition: background 0.3s ease;
-  box-shadow: 1px 1px 1px #cbc6cd;
+  border: none;
 }
 
 .btn-flat:hover {
   background: #3ba1a8;
   color: white;
   text-decoration: none;
-  box-shadow: 1px 1px 1px #c2bdc5;
 }
 

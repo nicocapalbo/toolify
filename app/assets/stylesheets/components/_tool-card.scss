@@ -17,34 +17,23 @@
   }
 
   h3 {
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin: 0;
   color: #2f4d6b;
   }
 
   p {
   font-size: 16px;
   opacity: .7;
-  margin: 0;
-  }
-
-  a {
-    text-decoration: none;
-  }
-  &:hover {
-  textdecoration: none;
   }
 }
 
-
 .tool-card .tool-card-infos {
-  padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
+  line-height: 1.5;
 }
 
 .tool-card-links {
