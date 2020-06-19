@@ -1,11 +1,11 @@
 <div class="section">
   <div class="home-banner d-flex align-items-center w-100 p-5 mb-5" style="background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg')">
     <div class="container">
-      <h1>Find the tool you miss</h1>
+      <h1>Build. Repair. Destroy.</h1>
       <h3>Choose your location and the tool you need</h3>
-      <%= form_with url: tools_path, method: :get, local: true do %>
-      <%= text_field_tag :query, "", class: "form-control", placeholder: "Search for a Tool!" %>
-      <%= submit_tag "", class: "d-none" %>
+      <%= form_with url: tools_path, method: :get, local: true, class: "form-inline mt-3" do %>
+      <%= text_field_tag :query, "", class: "form-control w-75", placeholder: "Search for a Tool!" %>
+      <%= submit_tag "Search", class: "btn btn-flat" %>
       <% end %>
       <%#= simple_form_for :query, url: tools_path, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
       <%#= f.input :name, label: false, placeholder: "Name", class: "form-group mb-2" %>
@@ -31,6 +31,7 @@
 
     <!-- CHANGE THE SRC OF THE IMG -->
     <div class="container">
+      <h2>Last tools</h2>
       <div class="cards">
         <% @tools.take(4).each do |tool|  %>
         <%= link_to tool_path(tool) do %>
