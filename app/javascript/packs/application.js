@@ -25,11 +25,14 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_map';
-import { initUpdateNavbarOnScroll } from '../plugins/init_navbar'
+import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initUpdateNavbarOnScroll } from '../plugins/init_navbar';
+
 
 document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   initMapbox();
+  initAutocomplete();
 })
 
 
