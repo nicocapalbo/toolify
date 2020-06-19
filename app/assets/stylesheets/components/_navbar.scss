@@ -1,8 +1,10 @@
 .toolify-navbar {
   justify-content: space-between;
-  background: white;
   box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
   height: 65px;
+  /* background-color: transparent;*/
+  transition: 0.5s background-color ease;
+  background-color: white;
 }
 
 .toolify-navbar .navbar-collapse {
@@ -21,4 +23,18 @@
 
 .btn-upload {
   margin-right: 15px;
+}
+
+.toolify-navbar-white {
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5)
+}
+
+.search-navbar {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transition: 0.5s;
 }
