@@ -10,7 +10,7 @@
 
     <%= form_with url: tools_path, method: :get, local: true, wrapper: :inline_form, html: { class: "form-inline search-navbar" } do %>
     <div class="form-group">
-      <%= text_field_tag :query, "", class: "form-control w-75 rounded-pill", placeholder:"Search for a Tool!" %>
+      <%= text_field_tag :query, "", class: "form-control search-bigger rounded-pill", placeholder:"Search for a Tool!" %>
     </div>
     <%= submit_tag "Search", value: "Search", class: "d-none btn btn-default" %>
     <% end %>
