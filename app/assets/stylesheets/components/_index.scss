@@ -9,6 +9,8 @@
 @import "btn-transparent";
 @import "tool-form";
 @import "show";
+@import "booking-form";
+@import "details-booking-card";
 
 
 h1, h2, h3 {
@@ -35,4 +37,27 @@ a:hover {
   width: 50px;
   padding: 2px 5px 5px 5px;
   border-radius: 15px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.action-btn {
+  width: 118px;
+}
+
+#action {
+  text-align: center;
 }

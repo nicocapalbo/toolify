@@ -1,0 +1,21 @@
+.details-booking-card {
+  margin-top: 90px !important;
+  margin-bottom: 70px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px 30px;
+  box-shadow: 1px 2px 15px rgba(0,0,0,0.2);
+  width: 100%;
+}
+
+.details-booking-info {
+  h2 {
+    font-size: 25px;
+  }
+}
+
+
+.details-booking-img {
+  object-fit: cover;
+  width: 100%;
+}

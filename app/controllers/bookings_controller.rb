@@ -14,14 +14,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    if (Time.new < @booking.start_date) && (@booking.start_date < @booking.finish_date)
-      # maybe add user that rents, is not user who gives tool to rent
-      @tool = Tool.find(params[:tool_id])
-      @booking.user_id = current_user.id
-      @booking.tool_id = @tool.id
-      @booking.status = "pending"
-      @booking.total_price = (@booking.finish_date - @booking.start_date) / 86400 * @tool.price
-      @booking.save
+    @tool = Tool.find(params[:tool_id])
+    @booking.user_id = current_user.id
+    @booking.tool_id = @tool.id
+    @booking.status = "Pending"
+    @booking.total_price = (@booking.finish_date - @booking.start_date) / 86400 * @tool.price
+    if @booking.save
       redirect_to dashboard_path
     else
       render :new
@@ -39,6 +37,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :finish_date, :status)
   end
-
-
 end
