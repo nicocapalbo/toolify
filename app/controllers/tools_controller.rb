@@ -18,7 +18,7 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
-    @user_tools = @tool.user.tools.first(3)
+    @user_tools = @tool.user.tools.filter {|tool| tool != @tool}.first(3)
     @markers = [
       {
         lat: @tool.latitude,
