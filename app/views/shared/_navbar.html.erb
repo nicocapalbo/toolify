@@ -1,13 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light toolify-navbar fixed-top">
   <div class="container">
     <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo-trans.png" %>
+    <%= image_tag "logo-trans.png", class: "bg-logo-white" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <%= form_with url: tools_path, method: :get, local: true, wrapper: :inline_form, html: { class: "form-inline search-navbar" } do %>
+    <div class="form-group">
+      <%= text_field_tag :query, "", class: "form-control w-75 rounded-pill", placeholder:"Search for a Tool!" %>
+    </div>
+    <%= submit_tag "Search", value: "Search", class: "d-none btn btn-default" %>
+    <% end %>
+
+    <%#= f.input :name, label: false, placeholder: "Name", class: "form-group mb-2" %>
+    <%#= f.submit "Search", class: "btn-flat" %>
+    <%# end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
