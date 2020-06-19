@@ -1,10 +1,39 @@
-<div class="container tool-form">
-  <h1>Booking:</h1>
-    <p><%= @tool.name %> from: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
-    <%= simple_form_for [@tool, @booking] do |f| %>
+<div class="container  mt-5">
+  <div class="row">
+
+    <div class="col-sm-12 col-md-8 col-lg-8 booking-form">
+      <h1>Booking:</h1>
+      <p><%= @tool.name %> from: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+      <%= simple_form_for [@tool, @booking] do |f| %>
       <%= f.input :start_date, as: :date %>
       <%= f.input :finish_date, as: :date %>
-      <%= f.button :submit, class: "btn-flat"%>
-    <% end %>
+      <%= f.button :submit, 'Book Now', class: "btn-flat"%>
+      <% end %>
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-lg-4">
+      <div class="details-booking-card">
+        <% if @tool.photo.attached? %>
+          <%= cl_image_tag @tool.photo.key, class: "details-booking-img" %>
+        <% else %>
+          <img src="https://bekservice.de/wp-content/uploads/2016/12/tools_cropped.jpg">
+        <% end %>
+        <div class="details-booking-info">
+          <h2><%= @tool.name %></h2>
+          <p class="p-show"><%= @tool.description.truncate(90) %></p>
+
+          <div class="tool-details">
+            <p><i class="fas fa-map-marker-alt"> </i><strong> Location: </strong><%= @tool.location %></p>
+            <p><i class="fas fa-tag"></i> <strong>Price: </strong><%= @tool.price %>€/day</p>
+            <p><i class="fas fa-user-circle"></i> <strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+          </div>
+          <!-- <div class="book-now"><%#= link_to 'Book Now', new_tool_booking_path(@tool), :class => "btn-flat btn-book-now" %></div> -->
+        </div>
+      </div>
+    </div>
+      <%= link_to 'Back', tools_path, :class => "btn-transparent" %>
+
+  </div>
 </div>
+
 
