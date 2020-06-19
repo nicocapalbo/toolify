@@ -7,80 +7,78 @@
 
 
   <!-- Will display all the bookings made as a guest -->
-  <h3>Tools booked</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Status</th>
-        <th>Name</th>
-        <th>Owner</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% current_user.bookings.each do |booking| %>
+    <h3>Tools booked</h3>
+    <table>
+      <thead>
         <tr>
-          <td><%= booking.status %></td>
-          <td><%= booking.tool.name %></td>
-          <td><%= booking.tool.user.first_name %> <%= booking.tool.user.last_name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.finish_date %></td>
-          <td><%= booking.total_price %> €</td>
+          <th>Status</th>
+          <th>Name</th>
+          <th>Owner</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Total</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% current_user.bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.status %></td>
+            <td><%= booking.tool.name %></td>
+            <td><%= booking.tool.user.first_name %> <%= booking.tool.user.last_name %></td>
+            <td><%= booking.start_date.month %>/<%= booking.start_date.day %>/<%= booking.start_date.year %></td>
+            <td><%= booking.finish_date.month %>/<%= booking.finish_date.day %>/<%= booking.finish_date.year %></td>
+            <td><%= booking.total_price %> €</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
   <!-- Will display all tools rented as a host/owner -->
-  <h3>Tools rented</h3>
-
-   <table>
-    <thead>
-      <tr>
-        <th>Status</th>
-        <th>Name</th>
-        <th>User</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Total</th>
-        <th colspan="2">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% current_user.tools.each do |tool| %>
-      <!-- 2. Display every time a tool was booked -->
-      <% tool.bookings.each do |booking| %>
+    <h3>Tools rented</h3>
+     <table>
+      <thead>
         <tr>
-          <td><%= booking.status %></td>
-          <td><%= booking.tool.name %></td>
-          <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.finish_date %></td>
-          <td><%= booking.total_price %> €</td>
-            <!-- 3. Only If the status of the booking is pending both Accept and Reject buttons will apear-->
-            <% if booking.status == "Pending" %>
-              <!-- ACCEPT BUTTON -->
-              <td>
-                <%= simple_form_for(booking) do |f| %>
-                  <%= f.input :status, as: :hidden, input_html: {value: 'Accepted'} %>
-                  <%= f.submit "Accept" %>
-                <% end %>
-              </td>
-                <!-- REJECT BUTTON -->
-              <td>
-                <%= simple_form_for(booking) do |f| %>
-                  <%= f.input :status, as: :hidden, input_html: {value: 'Rejected'} %>
-                  <%= f.submit "Reject" %>
-                <% end %>
-              </td>
-            <% end %>
+          <th>Status</th>
+          <th>Name</th>
+          <th>User</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Total</th>
+          <th colspan="2" id="action">Action</th>
         </tr>
+      </thead>
+      <tbody>
+        <% current_user.tools.each do |tool| %>
+        <!-- 2. Display every time a tool was booked -->
+        <% tool.bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.status %></td>
+            <td><%= booking.tool.name %></td>
+            <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+            <td><%= booking.start_date.month %>/<%= booking.start_date.day %>/<%= booking.start_date.year %></td>
+            <td><%= booking.finish_date.month %>/<%= booking.finish_date.day %>/<%= booking.finish_date.year %></td>
+            <td><%= booking.total_price %> €</td>
+              <!-- 3. Only If the status of the booking is pending both Accept and Reject buttons will apear-->
+              <% if booking.status == "Pending" %>
+                <!-- ACCEPT BUTTON -->
+                <td class="action-btn">
+                  <%= simple_form_for(booking) do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: {value: 'Accepted'} %>
+                    <%= f.submit "Accept", class: "btn btn-flat" %>
+                  <% end %>
+                </td>
+                  <!-- REJECT BUTTON -->
+                <td class="action-btn">
+                  <%= simple_form_for(booking) do |f| %>
+                    <%= f.input :status, as: :hidden, input_html: {value: 'Rejected'} %>
+                    <%= f.submit "Reject", class: "btn btn-flat" %>
+                  <% end %>
+                </td>
+              <% end %>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 
 </div>

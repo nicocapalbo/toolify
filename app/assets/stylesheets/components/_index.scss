@@ -36,3 +36,26 @@ a:hover {
   padding: 2px 5px 5px 5px;
   border-radius: 15px;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.action-btn {
+  width: 118px;
+}
+
+#action {
+  text-align: center;
+}
