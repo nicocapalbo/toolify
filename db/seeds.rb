@@ -53,7 +53,7 @@ tool = Tool.create!(name: "Rotary Tool", description: "A rotary tool is a small 
 tool.photo.attach(io: file, filename: 'rotary_tool.jpg', content_type: 'image/jpg')
 puts "8"
 file = URI.open('https://www.angliatoolcentre.co.uk/uploads/images/products/dewalt-dcs334n-18v-brushless-jigsaw-body-only-pid48803_1.jpg')
-tool = Tool.create!(name: "Jigsaw", description: "A jigsaw is a small power tool that is used for cutting curved lines in wood and other materials.", location: "Calle Córcega 611, Barcelona", price: rand(1..20), user_id: rand(1..4))
+tool = Tool.create!(name: "Jigsaw", description: "A jigsaw is a small power tool that is used for cutting curved lines in wood and other materials.", location: "Carrer d'en Grassot 101, Barcelona", price: rand(1..20), user_id: rand(1..4))
 tool.photo.attach(io: file, filename: 'jigsaw.jpg', content_type: 'image/jpg')
 puts "9"
 file = URI.open('https://images.homedepot-static.com/productImages/e3fada2d-8c8a-41d5-a5f7-8466f6c1b1ed/svn/ryobi-reciprocating-saws-p517-64_1000.jpg')
