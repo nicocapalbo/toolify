@@ -1,3 +1,7 @@
+.container-show {
+  margin-top: 60px;
+}
+
 .card-tool-show {
   margin-top: 90px;
   margin-bottom: 50px;
@@ -25,6 +29,7 @@
 
 .card-tool-infos {
   padding-left: 50px;
+  padding-right: 20px;
   color: $toolify-dark;
   h2 {
   font-size: 35px;
@@ -67,6 +72,7 @@
   h4 {
   font-size: 22px;
   margin-bottom: 20px;
+  color: $toolify-dark;
   }
 }
 
@@ -91,14 +97,15 @@
   padding: 20px;
   }
   h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
+  opacity: 0.9;
   }
   p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: .8;
   margin-bottom: 0;
   margin-top: 7px;
   }

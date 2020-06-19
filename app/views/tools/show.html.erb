@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container-show">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-8">
       <div class="card-tool-show">
@@ -12,7 +12,7 @@
           <h3 class="p-show"><%= @tool.description.truncate(90) %></h3>
 
           <div class="tool-details">
-            <p><i class="fas fa-map-marker-alt"> </i><strong> Location: </strong><%= @tool.location %></p>
+            <p><i class="fas fa-map-marker-alt"> </i><strong> Location: </strong><%= @tool.location.truncate(50) %></p>
             <p><i class="fas fa-tag"></i> <strong>Price: </strong><%= @tool.price %>€/day</p>
             <p><i class="fas fa-user-circle"></i> <strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
           </div>
