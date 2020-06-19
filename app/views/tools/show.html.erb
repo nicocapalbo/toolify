@@ -25,13 +25,15 @@
     <div class="col-sm-12 col-md-4 col-lg-4">
         <div class="other-tools"><h4>Other items of <%= @tool.user.first_name%>:</h4>
           <% @user_tools.each do |user_tool| %>
-          <div class="card-owner-tools">
-             <%= cl_image_tag user_tool.photo.key %>
-            <div class="owner-tools-infos">
-              <h2><%=user_tool.name %></h2>
-              <p><%=user_tool.description.truncate(30) %></p>
+            <%= link_to tool_path(user_tool) do %>
+            <div class="card-owner-tools">
+               <%= cl_image_tag user_tool.photo.key %>
+              <div class="owner-tools-infos">
+                <h2><%=user_tool.name %></h2>
+                <p><%=user_tool.description.truncate(30) %></p>
+              </div>
             </div>
-          </div>
+            <% end %>
           <% end %>
         </div>
       </div>
